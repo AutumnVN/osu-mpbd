@@ -85,7 +85,7 @@ interface MostPlayedBeatmap {
     const playerId = await rl.question('Enter player ID: ');
     if (!playerId || isNaN(Number(playerId))) return console.error('Invalid player ID');
 
-    const amount = Number(await rl.question('Enter amount of beatmaps to download: '));
+    const amount = Number(await rl.question('Enter amount of beatmapsets to download: '));
     if (!amount || isNaN(amount)) return console.error('Invalid amount');
 
     const noVideo = await rl.question('Prefer no video? (y)/n: ');
