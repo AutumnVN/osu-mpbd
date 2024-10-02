@@ -100,7 +100,7 @@ interface MostPlayedBeatmap {
     console.log('Getting most played beatmapsets');
 
     while (neededToDownloadBeatmapsets.length < amount) {
-        const res = await fetch(`https://chino.pages.dev/osuapiv2/users/${playerId}/beatmapsets/most_played?mode=osu&offset=${i}&limit=100`).then(res => res.json()) as MostPlayedBeatmap[];
+        const res = await fetch(`https://chino.pages.dev/osuapiv2/users/${playerId}/beatmapsets/most_played?offset=${i}&limit=100`).then(res => res.json()) as MostPlayedBeatmap[];
         if (!res.length) break;
 
         for (const { beatmap, beatmapset } of res) {
