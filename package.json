@@ -1,0 +1,21 @@
+{
+    "main": "dist/index.js",
+    "scripts": {
+        "build": "node build.mjs && node --experimental-sea-config sea.json && node -e \"require('fs').copyFileSync(process.execPath, 'dist/osu-mpbd.exe')\" && pnpm dlx postject dist/osu-mpbd.exe NODE_SEA_BLOB dist/sea.blob --sentinel-fuse NODE_SEA_FUSE_fce680ab2cc467b6e072b8b5df1996b2",
+        "lint": "tsc && eslint .",
+        "start": "node build.mjs && node ."
+    },
+    "devDependencies": {
+        "@eslint/js": "^9.2.0",
+        "@types/node": "^20.12.12",
+        "esbuild": "^0.21.3",
+        "eslint": "^8.57.0",
+        "eslint-plugin-simple-import-sort": "^12.1.0",
+        "eslint-plugin-unused-imports": "^3.2.0",
+        "typescript": "^5.4.5",
+        "typescript-eslint": "^7.9.0"
+    },
+    "dependencies": {
+        "osu-buffer": "^2.0.2"
+    }
+}

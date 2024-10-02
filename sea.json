@@ -1,0 +1,5 @@
+{
+    "main": "dist/index.js",
+    "output": "dist/sea.blob",
+    "disableExperimentalSEAWarning": true
+}
