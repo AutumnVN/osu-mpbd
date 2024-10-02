@@ -32,7 +32,7 @@ jobs:
 
     - name: Release
       run: |
-        gh release create release dist/osu-mpbd.exe
+        gh release upload release --clobber dist/osu-mpbd.exe
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
