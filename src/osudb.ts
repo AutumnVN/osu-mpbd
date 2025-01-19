@@ -100,7 +100,7 @@ export interface OsuDb {
 }
 
 export function parseOsuDb(buffer: Buffer): OsuDb {
-    const reader = new OsuReader(buffer.buffer);
+    const reader = new OsuReader(new Uint8Array(buffer).buffer);
     const osuVersion = reader.readInt32();
     const folderCount = reader.readInt32();
     const accountUnlocked = reader.readBoolean();
@@ -139,7 +139,7 @@ export function parseOsuDb(buffer: Buffer): OsuDb {
                 reader.readBytes(1);
                 const mods = reader.readInt32();
                 reader.readBytes(1);
-                const star = reader.readDouble();
+                const star = reader.readFloat();
                 stars[mods] = star;
             }
 
